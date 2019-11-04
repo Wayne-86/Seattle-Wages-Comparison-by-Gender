@@ -30,7 +30,7 @@ We plan to create data visualizations that show various information on fire call
 ## 3.0 Possible data sets
 **Seattle Police Department 911 incident Response.** -- This dataset record the 911 police responses in Seattle from 2009 to 2017. It includes data such as event number, event type, date and locations. We can utilize this dataset by analyzing the distribution of incidents based on areas and time. We could also analyze the percentage of fire calls among all 911 calls in various areas.  
 _**Attributes:**_ 19 , _**Observations:**_ 1433826  
-<https://www.kaggle.com/sohier/seattle-police-department-911-incident-response/download>
+<https://www.kaggle.com/sohier/seattle-police-department-911-incident-response>
 
 **Seattle Real Time Fire 911 Calls** -- This is a real time database records Seattle Fire Department’s 911 dispatches. The duration of this dataset is from 2003 to now. This dataset includes data of incidents’ address, types, datetime and locations. This dataset can be used to analyze the fire call frequency from time to time as well as identify the area with more frequent fire calls.  
 _**Attributes:**_ 7 , _**Observations:**_  1.41M  
