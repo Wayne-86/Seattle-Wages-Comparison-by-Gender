@@ -28,7 +28,7 @@ We plan to create data visualizations that show various information on fire call
 **What categories of fire call incidents are most common, and how is this changing?**
 
 ## 3.0 Possible data sets
-**Seattle Police Department 911 incident Response.** -- This dataset record the 911 police responses in Seattle from 2009 to 2017. It includes data such as event number, event type, date and locations. We can utilize this dataset by analyzing the distribution of incidents based on areas and time. We could also analyze the percentage of fire calls among all 911 calls in various areas.
+**Seattle Police Department 911 incident Response.** -- This dataset record the 911 police responses in Seattle from 2009 to 2017. It includes data such as event number, event type, date and locations. We can utilize this dataset by analyzing the distribution of incidents based on areas and time. We could also analyze the percentage of fire calls among all 911 calls in various areas.  
 _**Attributes:**_ 19 , _**Observations:**_ 1433826  
 <https://www.kaggle.com/sohier/seattle-police-department-911-incident-response/download>
 
