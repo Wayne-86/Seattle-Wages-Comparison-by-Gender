@@ -13,7 +13,7 @@ library(shiny)
 shinyUI(fluidPage(
 
     # Application title
-    titlePanel("Old Faithful Geyser Data"),
+    titlePanel("U-District Fire Responses"),
 
     # Sidebar with a slider input for number of bins
     sidebarLayout(
@@ -29,5 +29,17 @@ shinyUI(fluidPage(
         mainPanel(
             plotOutput("distPlot")
         )
+    ),
+    
+    # Make a side Nav Bar
+    navlistPanel(
+        "Project Introduction",
+        tabPanel("Component 1"),
+        tabPanel("Component 2"),
+        "Header B",
+        tabPanel("Component 3"),
+        tabPanel("Component 4"),
+        "-----",
+        tabPanel("Component 5")
     )
 ))
