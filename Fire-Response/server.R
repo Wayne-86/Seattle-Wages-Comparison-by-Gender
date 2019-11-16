@@ -9,9 +9,17 @@
 
 library(shiny)
 
+# Sources
+source("./source/html_functions.R")
+
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
-
+    
+    # Introduction - read contents of markdown file
+    output$intro <- renderUI({
+        get_text_from_md_file("./docs/Introduction.md")
+    })
+    
     output$distPlot <- renderPlot({
 
         # generate bins based on input$bins from ui.R

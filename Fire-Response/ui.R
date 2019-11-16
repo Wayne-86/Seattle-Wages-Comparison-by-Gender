@@ -35,8 +35,10 @@ shinyUI(fluidPage(
     navlistPanel(
         "U-District Fire Responses",
         "-----",
-        tabPanel("Introduction",
-                 h2("Whatwarwara")
+        tabPanel(
+            "Introduction",
+            h2("Whatwarwara"),
+            htmlOutput("intro")
                  ),
         tabPanel("Background & Research Questions"),
         navbarMenu("Interactive Visualizations",
