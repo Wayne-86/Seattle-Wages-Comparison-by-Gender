@@ -20,6 +20,15 @@ shinyServer(function(input, output) {
         get_text_from_md_file("./docs/Introduction.md")
     })
     
+    output$background <- renderUI({
+        get_text_from_md_file("./docs/Background_and_Research_Questions.md")
+    })
+    
+    output$about_us <- renderUI({
+        get_text_from_md_file("./docs/about_us.md")
+    })
+    
+    
     output$distPlot <- renderPlot({
 
         # generate bins based on input$bins from ui.R

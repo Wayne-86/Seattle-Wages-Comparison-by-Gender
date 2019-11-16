@@ -1,4 +1,3 @@
-# U-District Fire Responses
 ### Working Title: 
 Demonstrating Organized Information of Fire Calls of U-District 
 

@@ -13,5 +13,5 @@ If fire department members and officials use organized information on fire calls
 We plan to create data visualizations that show various information on fire calls in the U-District area, such as the number of fire calls received, locations of fire calls, and frequency of fire calls at different times of day. We also plan to compare the frequency of non-fire incidents that occurred in the area relative to fire incidents. Additionally, we will demonstrate how data about fire calls can help fire department members and officials solve challenges by reaching a data-driven solution.
 
 ## Research Questions:
-* ### _What parts of the U-district are at higher risk of incidents necessitating a fire call? What about at different times of the year?_
-* ### _What categories of fire call incidents are most common, and how is this changing?_
+* _What parts of the U-district are at higher risk of incidents necessitating a fire call? What about at different times of the year?_
+* _What categories of fire call incidents are most common, and how is this changing?_

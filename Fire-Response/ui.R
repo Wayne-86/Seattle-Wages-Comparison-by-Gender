@@ -13,7 +13,7 @@ library(shiny)
 shinyUI(fluidPage(
 
     # Application title
-    titlePanel("U-District Fire Responses"),
+    titlePanel(h1("U-District Fire Responses", align = "center")),
 
     # # Sidebar with a slider input for number of bins
     # sidebarLayout(
@@ -37,10 +37,10 @@ shinyUI(fluidPage(
         "-----",
         tabPanel(
             "Introduction",
-            h2("Whatwarwara"),
             htmlOutput("intro")
                  ),
-        tabPanel("Background & Research Questions"),
+        tabPanel("Background & Research Questions",
+                 htmlOutput("background")),
         navbarMenu("Interactive Visualizations",
                    tabPanel("Visualization #1"),
                    tabPanel("Visualization #2"),
@@ -48,6 +48,7 @@ shinyUI(fluidPage(
         ),
         tabPanel("Conclusion"),
         tabPanel("About the Tech"),
-        tabPanel("About us")
+        tabPanel("About us",
+                 htmlOutput("about_us"))
     )
 ))
