@@ -28,18 +28,30 @@ shinyUI(fluidPage(
         # Show a plot of the generated distribution
         mainPanel(
             plotOutput("distPlot")
-        )
+        ),
     ),
     
     # Make a side Nav Bar
     navlistPanel(
-        "Project Introduction",
-        tabPanel("Component 1"),
-        tabPanel("Component 2"),
-        "Header B",
-        tabPanel("Component 3"),
-        tabPanel("Component 4"),
+        # "Header A",
+        # tabPanel("Component 1"),
+        # tabPanel("Component 2"),
+        # "Header B",
+        # tabPanel("Component 3"),
+        # tabPanel("Component 4"),
+        # "-----",
+        # tabPanel("Component 5")
+        "U-District Fire Responses",
         "-----",
-        tabPanel("Component 5")
+        tabPanel("Introduction"),
+        tabPanel("Background & Research Questions"),
+        navbarMenu("Interactive Visualizations",
+                   tabPanel("Visualization #1"),
+                   tabPanel("Visualization #2"),
+                   tabPanel("Visualization #3")
+        ),
+        tabPanel("Conclusion"),
+        tabPanel("About the Tech"),
+        tabPanel("About us")
     )
 ))
