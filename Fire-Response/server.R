@@ -11,6 +11,7 @@ library(shiny)
 
 # Sources
 source("./source/html_functions.R")
+source("./source/interactive_viz2.R")
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
