@@ -9,6 +9,9 @@
 
 library(shiny)
 
+source("./source/html_functions.R")
+source("./source/interactive_viz2.R")
+
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
 
@@ -41,8 +44,22 @@ shinyUI(fluidPage(
                  ),
         tabPanel("Background & Research Questions",
                  htmlOutput("background")),
-        navbarMenu("Interactive Visualizations",
-                   tabPanel("Visualization #1"),
+        navbarMenu("Map & Plot",
+                   tabPanel("Heat Map on the Frequency of 911 Fire Calls",
+                            leafletOutput("heatMap"),
+                            fluidRow(
+                                column(4, sliderInput("Longitude", 
+                                        label = h3("Longitude Range"), 
+                                        min = -122.322, max = -122.286,
+                                        value = c(-122.322, -122.286))
+                                ),
+                                column(4, sliderInput("Latitude", 
+                                        label = h3("Latitude Range"), 
+                                        min = 47.647, max = 47.672, 
+                                        value = c(47.647, 47.672))
+                                )
+                            )
+                            ),
                    tabPanel("Visualization #2"),
                    tabPanel("Visualization #3")
         ),

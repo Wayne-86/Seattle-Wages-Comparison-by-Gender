@@ -29,16 +29,15 @@ shinyServer(function(input, output) {
         get_text_from_md_file("./docs/about_us.md")
     })
     
+    fire_response_df <- get_fire_response_df()
     
-    output$distPlot <- renderPlot({
-
+    output$heatMap <- renderLeaflet({
         # generate bins based on input$bins from ui.R
-        x    <- faithful[, 2]
-        bins <- seq(min(x), max(x), length.out = input$bins + 1)
+        # x    <- faithful[, 2]
+        # bins <- seq(min(x), max(x), length.out = input$bins + 1)
 
         # draw the histogram with the specified number of bins
-        hist(x, breaks = bins, col = 'darkgray', border = 'white')
-
+        get_heat_map(input$Latitude, input$Longitude, fire_response_df)
     })
 
 })

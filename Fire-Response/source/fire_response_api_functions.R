@@ -14,7 +14,7 @@ library("RSocrata")
 #----------------------------------------------
 # Get the nytime API key - used below in queries
 #----------------------------------------------
-source("./fire_response_api_key.R")
+source("./source/fire_response_api_key.R")
 BASE_URI <- "https://data.seattle.gov/resource"
 ENDPOINT <- "/kzjm-xkqj.json"
 # #----------------------------------------------

@@ -9,3 +9,5 @@ PASSWORD <- "kehnyq-tYfnug-2fikda"
 # Key ID: cbchwwjj04axjalowl4lad1hk
 # Key Secret: 175ffvh50celo2k01lmxkomd55ogn83lw8220058bkqhhgnpot
 # App Tokens: XDUvtkxMGL9xpoWW9D6ZI6rZC
+
+GOOGLE_MAP_API <- "AIzaSyCazoSpfwok2jUJx-PQ-XWloyGvhT-Bjcg"
