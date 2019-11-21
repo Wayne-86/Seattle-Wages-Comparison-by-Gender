@@ -11,4 +11,4 @@
 * _What parts of the U-district are at higher risk of incidents necessitating a fire call? What about at different times of the year?_
 * _What categories of fire call incidents are most common, and how is this changing?_
 
-#### [_Project Proposal_](https://github.com/Wayne-86/U-District-Fire-Responses/wiki/Project-Proposal)
+#### [_Technical Report_](https://github.com/Wayne-86/U-District-Fire-Responses/wiki/Technical-Report)
