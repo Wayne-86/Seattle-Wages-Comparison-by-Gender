@@ -6,38 +6,70 @@
 #
 #    http://shiny.rstudio.com/
 #
-
-library(shiny)
+#----------------------------------------------
+# install.packages("shiny")
+# install.packages('rsconnect')
+#----------------------------------------------
+library("shiny")
 
 # Sources
 source("./source/html_functions.R")
-source("./source/interactive_viz2.R")
+source("./source/heatmap_on_incident_frequency.R")
+source("./source/barplot_top_types_by_time.R")
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
-    
-    # Introduction - read contents of markdown file
+
+    # Introduction - read contents from markdown file
     output$intro <- renderUI({
         get_text_from_md_file("./docs/Introduction.md")
     })
-    
+
+    # Background - read contents from markdown file
     output$background <- renderUI({
         get_text_from_md_file("./docs/Background_and_Research_Questions.md")
     })
-    
+
+    # Conclusion - read contents from markdown file
+    output$conclusion <- renderUI({
+        get_text_from_md_file("./docs/conclusion.md")
+    })
+
+    # About_Tech - read contents from markdown file
+    output$about_tech <- renderUI({
+        get_text_from_md_file("./docs/about_tech.md")
+    })
+
+    # About_us - read contents from markdown file
     output$about_us <- renderUI({
         get_text_from_md_file("./docs/about_us.md")
     })
-    
-    fire_response_df <- get_fire_response_df()
-    
-    output$heatMap <- renderLeaflet({
-        # generate bins based on input$bins from ui.R
-        # x    <- faithful[, 2]
-        # bins <- seq(min(x), max(x), length.out = input$bins + 1)
 
-        # draw the histogram with the specified number of bins
-        get_heat_map(input$Latitude, input$Longitude, fire_response_df)
+    # Render the leaflet based on UI inputs
+    output$heatmap <- renderLeaflet({
+        get_heat_map(fire_response_df, input$Latitude, input$Longitude,
+                     input$Season)
     })
+
+    # Render the plot based on UI inputs
+    output$barplot <- renderPlot({
+        get_bar_plot(fire_response_df, input$Type)
+    })
+
+    # Render the question and findings for the heat map
+    output$q_1 <- renderText({
+        research_question_1
+        })
+    output$f_1 <- renderText({
+        findings_1
+        })
+
+    # Render the quesiton and findings for the bar plot
+    output$q_2 <- renderText({
+        research_question_2
+        })
+    output$f_2 <- renderText({
+        findings_2
+        })
 
 })

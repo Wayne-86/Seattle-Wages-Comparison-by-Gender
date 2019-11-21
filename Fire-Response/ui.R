@@ -1,43 +1,24 @@
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
+# ui.R for the Fire-Response shiny app.
+#----------------------------------------------
+# install.packages("shiny")
+# install.packages('rsconnect')
+#----------------------------------------------
+library("shiny")
 
-library(shiny)
-
+# Source
 source("./source/html_functions.R")
-source("./source/interactive_viz2.R")
+source("./source/heatmap_on_incident_frequency.R")
+source("./source/barplot_top_types_by_time.R")
 
 # Define UI for application that draws a histogram
 shinyUI(fluidPage(
-
     # Application title
     titlePanel(h1("U-District Fire Responses", align = "center")),
 
-    # # Sidebar with a slider input for number of bins
-    # sidebarLayout(
-    #     sidebarPanel(
-    #         sliderInput("bins",
-    #                     "Number of bins:",
-    #                     min = 1,
-    #                     max = 50,
-    #                     value = 30)
-    #     ),
-    # 
-    #     # Show a plot of the generated distribution
-    #     mainPanel(
-    #         plotOutput("distPlot")
-    #     ),
-    # ),
-    
     # Make a side Nav Bar
     navlistPanel(
         "U-District Fire Responses",
-        "-----",
+        "------------------",
         tabPanel(
             "Introduction",
             htmlOutput("intro")
@@ -46,25 +27,66 @@ shinyUI(fluidPage(
                  htmlOutput("background")),
         navbarMenu("Map & Plot",
                    tabPanel("Heat Map on the Frequency of 911 Fire Calls",
-                            leafletOutput("heatMap"),
+                            # Display the Heat Map
+                            leafletOutput("heatmap"),
                             fluidRow(
-                                column(4, sliderInput("Longitude", 
-                                        label = h3("Longitude Range"), 
+                                # Create a slider for user to adjust longitude
+                                column(6, sliderInput("Longitude",
+                                        label = h3("Longitude Range"),
                                         min = -122.322, max = -122.286,
                                         value = c(-122.322, -122.286))
                                 ),
-                                column(4, sliderInput("Latitude", 
-                                        label = h3("Latitude Range"), 
-                                        min = 47.647, max = 47.672, 
+                                # Create a slider for user to adjust latitude
+                                column(6, sliderInput("Latitude",
+                                        label = h3("Latitude Range"),
+                                        min = 47.647, max = 47.672,
                                         value = c(47.647, 47.672))
-                                )
-                            )
+                                ),
+                                radioButtons("Season", label =
+                                            h3("Select Season"),
+                                            choices = list("Sprint" = 1,
+                                                           "Summer" = 2,
+                                                           "Autumn" = 3,
+                                                           "Winter" = 4),
+                                            selected = 1),
                             ),
-                   tabPanel("Visualization #2"),
-                   tabPanel("Visualization #3")
+                            hr(),
+                            fluidRow(
+                                strong("Research Question #1:"),
+                                textOutput("q_1")
+                            ),
+                            hr(),
+                            fluidRow(
+                                strong("Findings:"),
+                                textOutput("f_1")
+                            )
+                          ),
+                   tabPanel("Top 10 common 911 Fire Calls Through Seasons",
+                            # Display the Bar Plot
+                            fluidRow(
+                                plotOutput("barplot"),
+                                # Create a Select Box for user to choose
+                                selectInput("Type", label =
+                                                h3("Select Incident Type"),
+                                            choices = type_list,
+                                            selected = 1)
+                                ),
+                            hr(),
+                            fluidRow(
+                                strong("Research Question #2:"),
+                                textOutput("q_2")
+                            ),
+                            hr(),
+                            fluidRow(
+                                strong("Findings:"),
+                                textOutput("f_2")
+                            )
+                           )
         ),
-        tabPanel("Conclusion"),
-        tabPanel("About the Tech"),
+        tabPanel("Conclusion",
+                 htmlOutput("conclusion")),
+        tabPanel("About the Tech",
+                 htmlOutput("about_tech")),
         tabPanel("About us",
                  htmlOutput("about_us"))
     )

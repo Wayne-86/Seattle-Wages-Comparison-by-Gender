@@ -1,0 +1,13 @@
+name: Fire-Response
+title: Fire-Response
+username:
+account: waynew86
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1505069
+bundleId: 2606173
+url: https://waynew86.shinyapps.io/Fire-Response/
+when: 1574314556.18347
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .RData
