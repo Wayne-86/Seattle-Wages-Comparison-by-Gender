@@ -4,6 +4,7 @@
 # install.packages('rsconnect')
 #----------------------------------------------
 library("shiny")
+library("shinythemes")
 
 # Source
 source("./source/html_functions.R")
@@ -11,7 +12,7 @@ source("./source/heatmap_on_incident_frequency.R")
 source("./source/barplot_top_types_by_time.R")
 
 # Define UI for application that draws a histogram
-shinyUI(fluidPage(
+shinyUI(fluidPage(theme = shinytheme('slate'),
     # Application title
     titlePanel(h1("U-District Fire Responses", align = "center")),
 
