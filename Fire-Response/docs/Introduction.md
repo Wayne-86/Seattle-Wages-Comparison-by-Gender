@@ -14,4 +14,4 @@ The Information School
 University of Washington  
 Autumn 2019
 
-### [Technical Report](https://github.com/Wayne-86/U-District-Fire-Responses/wiki/Project-Proposal)
+### [Technical Report](https://github.com/Wayne-86/U-District-Fire-Responses/wiki/Technical-Report)

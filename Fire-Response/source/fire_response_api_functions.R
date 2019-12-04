@@ -26,4 +26,9 @@ get_fire_response_df <- function() {
 }
 
 # Extract the recently updated data from API
- fire_response_df <- get_fire_response_df()
+# fire_response_df <- get_fire_response_df()
+
+fire_response_df <- read.csv("./docs/Seattle_Real_Time_Fire_911_Calls.csv",
+                             header = TRUE,
+                             stringsAsFactors = FALSE
+)
